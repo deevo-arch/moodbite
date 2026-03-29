@@ -46,6 +46,11 @@ export default function UserDashboard({ menuItems, orders: initialOrders, userNa
   // Interactive Background Logic
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
+  const spotlightGradient = useMotionTemplate`
+    radial-gradient(800px circle at ${mouseX}px ${mouseY}px, 
+    rgba(255, 140, 0, 0.15), 
+    transparent 80%)
+  `
   
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
     const { left, top } = e.currentTarget.getBoundingClientRect()
@@ -168,11 +173,7 @@ export default function UserDashboard({ menuItems, orders: initialOrders, userNa
             <motion.div
               className="pointer-events-none absolute -inset-px opacity-80 mix-blend-screen z-0"
               style={{
-                background: useMotionTemplate`
-                  radial-gradient(800px circle at ${mouseX}px ${mouseY}px, 
-                  rgba(255, 140, 0, 0.15), 
-                  transparent 80%)
-                `
+                background: spotlightGradient
               }}
             />
 
