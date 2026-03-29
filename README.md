@@ -110,6 +110,29 @@ MoodBite features a **Zero-Config Installer** that automates system dependencies
 
 ---
 
+## 📱 Multi-Device Testing (OAuth)
+When testing on multiple devices (phones, tablets, or other PCs) on the same network, **Google OAuth** will block internal IPs (`172.x.x.x`). You MUST use a secure tunnel:
+
+### 1. Start a Tunnel
+Use [ngrok](https://ngrok.com/) to expose your local port `3000`:
+```bash
+ngrok http 3000
+```
+This will give you a public URL like `https://moodbite.ngrok-free.app`.
+
+### 2. Update OAuth Consoles
+Add your new tunnel URL to the following:
+- **Google Console**: `https://YOUR_TUNNEL_URL/api/auth/callback/google`
+- **Discord Console**: `https://YOUR_TUNNEL_URL/api/auth/callback/discord`
+
+### 3. Update Environment
+Update your `.env` file with the tunnel URL:
+```bash
+NEXTAUTH_URL="https://YOUR_TUNNEL_URL"
+```
+
+---
+
 ## 🔒 Security & The Vault
 MoodBite uses an encrypted `secrets.vault` to store the `.env` and `dev.db`. This allows for seamless deployment of pre-configured environments without exposing plain secrets on GitHub.
 
