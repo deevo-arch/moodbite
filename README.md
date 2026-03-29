@@ -133,6 +133,27 @@ NEXTAUTH_URL="https://YOUR_TUNNEL_URL"
 
 ---
 
+## 🌩️ Permanent Multi-Device Testing (Cloudflare)
+For a professional, **permanent** URL that doesn't change every time you restart your PC, we recommend **Cloudflare Tunnel**.
+
+### 1. Setup Tunnel
+1.  Install `cloudflared` and login: `cloudflared tunnel login`.
+2.  Create your tunnel: `cloudflared tunnel create moodbite`.
+3.  Start your tunnel pointing to port 3000:
+    ```bash
+    cloudflared tunnel run --url http://localhost:3000 moodbite
+    ```
+
+### 2. Update Developer Consoles (Universal)
+Add your permanent `https://moodbite.yourdomain.com/...` URL to the following:
+- **Google Console**: Authorized Redirect URIs
+- **Discord Console**: Redirects
+
+### 3. Automatic Detection
+The MoodBite Auth system is built with **Dynamic Host Detection**. Whether you access it via `localhost:3000` or your Cloudflare URL, the platform intelligently adapts its authentication flow to match!
+
+---
+
 ## 🔒 Security & The Vault
 MoodBite uses an encrypted `secrets.vault` to store the `.env` and `dev.db`. This allows for seamless deployment of pre-configured environments without exposing plain secrets on GitHub.
 
