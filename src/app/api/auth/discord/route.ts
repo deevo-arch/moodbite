@@ -7,7 +7,7 @@ export async function GET() {
     return NextResponse.json({ error: 'Missing DISCORD_CLIENT_ID in .env' }, { status: 500 })
   }
 
-  const redirectUri = 'http://localhost:3000/api/auth/discord/callback'
+   const redirectUri = `${process.env.NEXTAUTH_URL}/api/auth/discord/callback`
   const scope = 'identify email' // Discord needs identify to access the username and email to access email
 
   const authUrl = new URL('https://discord.com/api/oauth2/authorize')
