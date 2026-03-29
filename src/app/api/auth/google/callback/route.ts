@@ -6,13 +6,20 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const code = searchParams.get('code')
 
+  // Detect host and protocol via proxy headers (Cloudflare) or fallback
+  const forwardedHost = request.headers.get('x-forwarded-host')
+  const forwardedProto = request.headers.get('x-forwarded-proto') || 'https'
+  const host = forwardedHost || request.headers.get('host') || 'localhost:3000'
+  const protocol = forwardedHost ? forwardedProto : (host.includes('localhost') ? 'http' : 'https')
+  const baseUrl = `${protocol}://${host}`
+  const redirectUri = `${baseUrl}/api/auth/google/callback`
+
   if (!code) {
-    return NextResponse.redirect(new URL('/?error=NoCodeProvided', request.url))
+    return NextResponse.redirect(new URL(`/?error=NoCodeProvided`, baseUrl))
   }
 
   const clientId = process.env.GOOGLE_CLIENT_ID
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET
-  const redirectUri = 'http://localhost:3000/api/auth/google/callback'
 
   try {
     // 1. Exchange code for tokens
@@ -65,9 +72,9 @@ export async function GET(request: Request) {
     await setAuthCookie(dbUser.id)
 
     // 5. Redirect to User Dashboard
-    return NextResponse.redirect(new URL('/user', request.url))
+    return NextResponse.redirect(new URL('/user', baseUrl))
   } catch (error) {
     console.error('Google OAuth Error:', error)
-    return NextResponse.redirect(new URL('/?error=OAuthFailed', request.url))
+    return NextResponse.redirect(new URL(`/?error=OAuthFailed`, baseUrl))
   }
 }
