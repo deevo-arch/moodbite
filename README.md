@@ -127,7 +127,7 @@ node scripts/vault.js decrypt MoodBite67@123
 
 ## 🧪 Seeding & Test Accounts
 The `prisma/seed.ts` script populates the database with a high-end test suite. 
-- **SuperAdmin**: `akashmishrap@icloud.com`
+- **SuperAdmins**: `akashmishrap@icloud.com`, `avnishm324@gmail.com`
 - **Restaurants**: Various themed culinary partners (e.g., "The Comfort Kitchen").
 - **Users**: Standard customer profiles with predefined order histories.
 

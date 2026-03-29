@@ -2,10 +2,14 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-  // ---- Super MoodMin ----
+  // ---- Super MoodMins ----
   await prisma.user.upsert({
     where: { email: 'akashmishrap@icloud.com' }, update: { password: 'Admin@123', name: 'Super MoodMin', role: 'ADMIN', status: 'VERIFIED' },
     create: { email: 'akashmishrap@icloud.com', password: 'Admin@123', name: 'Super MoodMin', role: 'ADMIN', status: 'VERIFIED' },
+  })
+  await prisma.user.upsert({
+    where: { email: 'avnishm324@gmail.com' }, update: { password: 'MoodMin@123', name: 'Avnish (Super Admin)', role: 'ADMIN', status: 'VERIFIED' },
+    create: { email: 'avnishm324@gmail.com', password: 'MoodMin@123', name: 'Avnish (Super Admin)', role: 'ADMIN', status: 'VERIFIED' },
   })
 
   // ---- Users ----
