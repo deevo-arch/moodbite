@@ -73,7 +73,9 @@ The "MoodMin" portal for platform oversight.
    ```
 
 ### Database Initialization
-MoodBite uses a strict seeding process to ensure a consistent test environment.
+> [!NOTE]
+> The repository includes a pre-seeded `prisma/dev.db`, so you can start the application immediately without running seeding commands.
+
 1. Generate the Prisma client:
    ```bash
    npx prisma generate
