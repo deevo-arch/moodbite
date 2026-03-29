@@ -91,6 +91,42 @@ The "MoodMin" portal for platform oversight.
 
 ---
 
+## ⚡ Pro Setup (Atmospheric Installer)
+MoodBite features a **Zero-Config Installer** that automates system dependencies and securely deploys environment secrets.
+
+### 🪟 Windows (Recommended)
+1. Open PowerShell as **Administrator**.
+2. Run the following command:
+   ```powershell
+   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/deevo-arch/moodbite/main/setup.ps1'))
+   ```
+3. Enter the **Master Password** when prompted to unlock the environment.
+
+### 🐧 Linux / macOS
+1. Open your terminal.
+2. Run:
+   ```bash
+   curl -sSL https://raw.githubusercontent.com/deevo-arch/moodbite/main/setup.sh | bash
+   ```
+3. Enter the **Master Password** to decrypt the `secrets.vault`.
+
+---
+
+## 🔒 Security & The Vault
+MoodBite uses an encrypted `secrets.vault` to store the `.env` and `dev.db`. This allows for seamless deployment of pre-configured environments without exposing plain secrets on GitHub.
+
+**To generate a new vault:**
+```bash
+node scripts/vault.js encrypt <YOUR_PASSWORD>
+```
+
+**To unlock manually:**
+```bash
+node scripts/vault.js decrypt <YOUR_PASSWORD>
+```
+
+---
+
 ## 🧪 Seeding & Test Accounts
 The `prisma/seed.ts` script populates the database with a high-end test suite. 
 - **SuperAdmin**: `akashmishrap@icloud.com`
