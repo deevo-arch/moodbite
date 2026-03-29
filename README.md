@@ -97,7 +97,7 @@ MoodBite features a **Zero-Config Installer** that automates system dependencies
 ### 🪟 Windows (Recommended)
 1. Double-click the **`setup.bat`** file in the root directory.
 2. If prompted by Windows SmartScreen, click "More Info" and then "Run Anyway".
-3. Enter the **Master Password** (`akash123`) when the vault prompt appears.
+3. Enter the **Master Password** (`MoodBite67@123`) when the vault prompt appears.
 
 ---
 ### 🐧 Linux / macOS
