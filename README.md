@@ -95,13 +95,11 @@ The "MoodMin" portal for platform oversight.
 MoodBite features a **Zero-Config Installer** that automates system dependencies and securely deploys environment secrets.
 
 ### 🪟 Windows (Recommended)
-1. Open PowerShell as **Administrator**.
-2. Run the following command:
-   ```powershell
-   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/deevo-arch/moodbite/main/setup.ps1'))
-   ```
-3. Enter the **Master Password** when prompted to unlock the environment.
+1. Double-click the **`setup.bat`** file in the root directory.
+2. If prompted by Windows SmartScreen, click "More Info" and then "Run Anyway".
+3. Enter the **Master Password** (`akash123`) when the vault prompt appears.
 
+---
 ### 🐧 Linux / macOS
 1. Open your terminal.
 2. Run:
