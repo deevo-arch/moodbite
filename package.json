@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev:next": "next dev",
-    "dev:tunnel": "\"C:\\Program Files (x86)\\cloudflared\\cloudflared.exe\" tunnel run --url http://localhost:3000 moodbite-tunnel",
+    "dev:tunnel": "powershell -Command \"& 'C:\\Program Files (x86)\\cloudflared\\cloudflared.exe' tunnel run --url http://localhost:3000 moodbite-tunnel\"",
     "dev": "concurrently \"npm run dev:next\" \"npm run dev:tunnel\"",
     "build": "next build",
     "start": "next start",
