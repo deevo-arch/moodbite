@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MoodMins | Super Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#393939",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e2e2e2",
+                        "primary-fixed": "#ffdcc3",
+                        "on-primary-container": "#623200",
+                        "background": "#131313",
+                        "surface": "#131313",
+                        "tertiary-container": "#00b5fc",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-primary-fixed": "#2f1500",
+                        "surface-container": "#1f1f1f",
+                        "on-surface-variant": "#ddc1ae",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-container": "#00285c",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "secondary-fixed": "#d8e2ff",
+                        "primary-fixed-dim": "#ffb77d",
+                        "outline-variant": "#564334",
+                        "on-primary": "#4d2600",
+                        "inverse-primary": "#904d00",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#004360",
+                        "secondary-container": "#4b8eff",
+                        "on-tertiary-fixed-variant": "#004c6c",
+                        "on-secondary": "#002e69",
+                        "primary-container": "#ff8c00",
+                        "inverse-on-surface": "#303030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline": "#a48c7a",
+                        "on-surface": "#e2e2e2",
+                        "primary": "#ffb77d",
+                        "surface-container-highest": "#353535",
+                        "tertiary-fixed": "#c7e7ff",
+                        "on-error": "#690005",
+                        "surface-variant": "#353535",
+                        "tertiary": "#85cfff",
+                        "secondary": "#adc6ff",
+                        "tertiary-fixed-dim": "#85cfff",
+                        "surface-tint": "#ffb77d",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed": "#001e2e",
+                        "on-secondary-fixed-variant": "#004493",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1b1b1b",
+                        "on-tertiary": "#00344c",
+                        "on-background": "#e2e2e2",
+                        "on-secondary-fixed": "#001a41"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(31, 31, 31, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden">
+<!-- Top Navigation Bar (Mobile only) -->
+<header class="fixed top-0 w-full z-40 flex justify-between items-center px-6 h-20 bg-[#131313]/60 backdrop-blur-[24px] md:hidden">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-orange-400">menu</span>
+<h1 class="text-xl font-black text-[#E2E2E2]">MoodMins</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/15">
+<img alt="Admin" data-alt="Close up portrait of a professional male administrator in a modern office with warm lighting and soft background bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjCKm0xYDiwCvc95CS10AWPAce7NI_FcFifbbWxOUjjCZuHERhcts4Mt3KHl4oxlQHSU2dGaCBKpygAOY_-AuoDCJAN2MlhehhR-cYbqiwXC6KBG7GhaG-lt_eWD8RFxOWkBF7lRq2Kux-qD_q1qG5bkPZFD7EmXtqrbwKBVa_z5idrDYhdDvMQ-e0lpJMEg-D58G1EmvIlX17ZBt5YE5YWGEUzTubffrwX9-TbiBJWMnshdH9_kqBZIw_6fmol5zKhXVlsI6uJhOT"/>
+</div>
+</header>
+<!-- Navigation Drawer (Desktop) -->
+<aside class="fixed inset-y-0 left-0 z-50 hidden md:flex flex-col bg-[#131313]/60 backdrop-blur-[24px] rounded-r-[3rem] h-full w-72 shadow-[40px_0_40px_rgba(255,255,255,0.06)] tonal-shift bg-[#1F1F1F]">
+<div class="p-8">
+<span class="text-2xl font-bold bg-gradient-to-r from-[#FFB77D] to-[#FF8C00] bg-clip-text text-transparent">MoodMins</span>
+</div>
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl overflow-hidden bg-surface-container-highest">
+<img alt="Super Admin" data-alt="Professional profile photo of a modern corporate executive with a neutral background and professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqsxi7eFvDNH51P6w0xgZXQ-H56cZSVFLnUg2e8y4mbNnM6tjvDltn_LzmPFDmv_iB9rUR4JIMHMGmJ-1cYDPfJnZb1pxYaZ8OsVy0f8nWWIXF-QIfPC0kHfbxmdEr2W8HIvON9S92z1iVSqQThl7jr_QBJxwqQa-HO8xKJM0EX0ihDNX58zk4pZHGWHLPa7x8tKV3w9qZttlW1t-WSFxYQBnX_n7Urw7z82CP1uc3xmBVKSo60S5mfkzlp96DEo5bd20bifZwv-Ef"/>
+</div>
+<div>
+<p class="font-bold text-[#E2E2E2] tracking-tight">Super Admin</p>
+<p class="text-xs text-orange-400/80 font-medium">System Online</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-4 bg-[#FF8C00] text-[#0E0E0E] rounded-full px-6 py-3 mx-4 active:scale-[0.97] transition-all duration-300 font-medium tracking-[-0.02em]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-[#E2E2E2] px-6 py-3 mx-4 hover:bg-[#2A2A2A] rounded-full transition-all duration-300 font-medium tracking-[-0.02em]" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-4 text-[#E2E2E2] px-6 py-3 mx-4 hover:bg-[#2A2A2A] rounded-full transition-all duration-300 font-medium tracking-[-0.02em]" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>User Management</span>
+</a>
+<a class="flex items-center gap-4 text-[#E2E2E2] px-6 py-3 mx-4 hover:bg-[#2A2A2A] rounded-full transition-all duration-300 font-medium tracking-[-0.02em]" href="#">
+<span class="material-symbols-outlined" data-icon="health_and_safety">health_and_safety</span>
+<span>System Health</span>
+</a>
+<a class="flex items-center gap-4 text-[#E2E2E2] px-6 py-3 mx-4 hover:bg-[#2A2A2A] rounded-full transition-all duration-300 font-medium tracking-[-0.02em]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="p-8">
+<div class="p-4 bg-surface-container-high rounded-3xl">
+<p class="text-xs font-bold text-primary mb-1">STORAGE STATUS</p>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[75%] rounded-full"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-2">75% of cloud resources used</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-72 min-h-screen pt-24 pb-32 md:pt-12 md:pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-12">
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface mb-2">Control Center</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl">Oversee platform growth, verify new culinary partners, and manage high-tier logistics operations.</p>
+</header>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="glass-card p-8 rounded-xl border border-outline-variant/5">
+<span class="material-symbols-outlined text-primary mb-4 block" style="font-size: 32px;">restaurant</span>
+<p class="text-on-surface-variant text-sm font-medium uppercase tracking-wider">Restaurants</p>
+<h3 class="text-3xl font-black mt-1">1,284</h3>
+<p class="text-green-400 text-xs mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">arrow_upward</span> +12% this week
+                </p>
+</div>
+<div class="glass-card p-8 rounded-xl border border-outline-variant/5">
+<span class="material-symbols-outlined text-secondary mb-4 block" style="font-size: 32px;">delivery_dining</span>
+<p class="text-on-surface-variant text-sm font-medium uppercase tracking-wider">Active Couriers</p>
+<h3 class="text-3xl font-black mt-1">452</h3>
+<p class="text-orange-400 text-xs mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span> Peak Performance
+                </p>
+</div>
+<div class="glass-card p-8 rounded-xl border border-outline-variant/5">
+<span class="material-symbols-outlined text-tertiary mb-4 block" style="font-size: 32px;">payments</span>
+<p class="text-on-surface-variant text-sm font-medium uppercase tracking-wider">Revenue (24h)</p>
+<h3 class="text-3xl font-black mt-1">$42.8k</h3>
+<p class="text-green-400 text-xs mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">arrow_upward</span> +5.4%
+                </p>
+</div>
+<div class="glass-card p-8 rounded-xl border border-outline-variant/5">
+<span class="material-symbols-outlined text-error mb-4 block" style="font-size: 32px;">verified_user</span>
+<p class="text-on-surface-variant text-sm font-medium uppercase tracking-wider">Pending Verifications</p>
+<h3 class="text-3xl font-black mt-1">18</h3>
+<p class="text-on-surface-variant text-xs mt-2">Requires Action</p>
+</div>
+</section>
+<!-- Main Content Area: Lists -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Unverified Restaurants List -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<div>
+<h3 class="text-2xl font-bold tracking-tight">Unverified Restaurants</h3>
+<p class="text-on-surface-variant text-sm">New culinary partners awaiting review</p>
+</div>
+<span class="px-4 py-1.5 bg-surface-container-highest rounded-full text-xs font-bold text-primary">8 PENDING</span>
+</div>
+<div class="space-y-4">
+<!-- Restaurant Card 1 -->
+<div class="group glass-card p-6 rounded-lg flex items-center gap-6 border border-outline-variant/0 hover:border-outline-variant/20 transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl overflow-hidden bg-surface-container-lowest">
+<img alt="L'Artisan Paris" data-alt="High-end artisan bakery storefront with warm golden interior lighting and minimalist dark exterior design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBvCVoNT21S3c5XhlMS_H4krOmzjJ4sMtMg4dW1p4pmLf_ivAIs61Pb-lPLgnojMKsbg_6n4FuFyM8ncEfmYq1vScCJaysO14Ipozrn4HEHvyvGlldswRwcMP_kGCR9cRMmqRJ2J_OB_25PiilcUjMUoR5IY1dtaLHcuOyeaIa61Uya2q21RcU4J6kentbRiT47BrLSNCwJFsQISS7Ui3tAeUBKifZgMdqH79nSPuXQAE6k81WI7g_Eteo24MEZltZf3vSowCwNu9F"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg leading-tight">L'Artisan Paris</h4>
+<p class="text-on-surface-variant text-xs">French Patisserie • 2.4 miles away</p>
+</div>
+<button class="bg-gradient-to-br from-[#FFB77D] to-[#FF8C00] text-[#0E0E0E] px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-transform">
+                            Verify
+                        </button>
+</div>
+<!-- Restaurant Card 2 -->
+<div class="group glass-card p-6 rounded-lg flex items-center gap-6 border border-outline-variant/0 hover:border-outline-variant/20 transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl overflow-hidden bg-surface-container-lowest">
+<img alt="Sushi Zen" data-alt="Modern upscale sushi bar interior with sleek dark wood, glowing ambient lights, and minimalist Japanese aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPAPMiQBlhmEyknxzorSdV2eUc8-2ooZB8woaAi6-rAYjabiHS5l2TfNe_U9TZZaGNc5OQ9F_xHfU-YyS4yY06zK6iWwWqzdF3h6otjK8sr-vGNYtwJxM6MYNcydqinNmyZuHUPpsQL3AB0sQYzsU7d5SW8x6-4PHsSlIjicZ87nZcukwcqt8owxfZdOfZ_oGHK3rFeqo498W43B_2GDHbNPh2EjtVv3QQAyCsdw0WMSO6J27rH_Gq_J8SywtRaIn5I2xbJRqaq-R5"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg leading-tight">Sushi Zen</h4>
+<p class="text-on-surface-variant text-xs">Japanese Fine Dining • 1.1 miles away</p>
+</div>
+<button class="bg-gradient-to-br from-[#FFB77D] to-[#FF8C00] text-[#0E0E0E] px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-transform">
+                            Verify
+                        </button>
+</div>
+<!-- Restaurant Card 3 -->
+<div class="group glass-card p-6 rounded-lg flex items-center gap-6 border border-outline-variant/0 hover:border-outline-variant/20 transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl overflow-hidden bg-surface-container-lowest">
+<img alt="Grill &amp; Ember" data-alt="Close-up of premium grilled steak with glowing embers and smoke, dark atmospheric food photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-IiqXO2IMTMR7YMEahmvGgarcwGuNwOqXqH2aukD7rw_V-l8a46Uc-ps1WHabPmeNcONsMRPzl-eO-w59eQ8gEqFgGARRy6SKCe1ZrOhVQtVc9jQ-MWC1qJMYGKjZUqcmPHTTFEmpyuMJsEBaNq9k1cVYOFhKROrEsOViE93st7jRjt8QegpOYL7lyn83uhzwoWwGBXGNU1iKyECdLRhtGfJD3ME5zrkgWGVHmAefC-4dh-JSda5vIE5VkiCVm9uE_c-epDun4bnk"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg leading-tight">Grill &amp; Ember</h4>
+<p class="text-on-surface-variant text-xs">Steakhouse • 4.7 miles away</p>
+</div>
+<button class="bg-gradient-to-br from-[#FFB77D] to-[#FF8C00] text-[#0E0E0E] px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-transform">
+                            Verify
+                        </button>
+</div>
+</div>
+</section>
+<!-- Unverified Delivery Partners List -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<div>
+<h3 class="text-2xl font-bold tracking-tight">Unverified Delivery Partners</h3>
+<p class="text-on-surface-variant text-sm">Background check &amp; vehicle inspection</p>
+</div>
+<span class="px-4 py-1.5 bg-surface-container-highest rounded-full text-xs font-bold text-secondary">10 PENDING</span>
+</div>
+<div class="space-y-4">
+<!-- Partner Card 1 -->
+<div class="group glass-card p-6 rounded-lg flex items-center gap-6 border border-outline-variant/0 hover:border-outline-variant/20 transition-all duration-300">
+<div class="relative">
+<div class="w-16 h-16 rounded-2xl overflow-hidden bg-surface-container-lowest">
+<img alt="Marcus Rivera" data-alt="Professional headshot of a smiling young man in a clean casual polo shirt with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtoagW4Hc0oGo4LWe37EnxmzilaGXZixJi_r6MiV3-KkbHYtNXQd5BZ3V70b90mCtbKjAeijprGc8pc_JifmejBVDvVp8q0TpkSmN5l_oUpN-en6F6MUK_dBVhuqP7gY1QbAJqEWFchwBofzVbMRzy6XKX27k0tPNm75vzIJjmvGs-7x7itnYFZ9B7SNW5xWfl2SXym7wk0QL_fdxhncW-fPoxwdjUwhNxRe-tdhDsCiAFwQXijARS0qfPdX4P-zR_gd5EQPAworFr"/>
+</div>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 bg-secondary text-on-secondary rounded-full flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-[12px] font-bold">electric_bike</span>
+</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg leading-tight">Marcus Rivera</h4>
+<p class="text-on-surface-variant text-xs">Electric Cycle • ID: #MM-4921</p>
+</div>
+<button class="bg-gradient-to-br from-[#FFB77D] to-[#FF8C00] text-[#0E0E0E] px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-transform">
+                            Verify
+                        </button>
+</div>
+<!-- Partner Card 2 -->
+<div class="group glass-card p-6 rounded-lg flex items-center gap-6 border border-outline-variant/0 hover:border-outline-variant/20 transition-all duration-300">
+<div class="relative">
+<div class="w-16 h-16 rounded-2xl overflow-hidden bg-surface-container-lowest">
+<img alt="Sarah Chen" data-alt="Friendly professional headshot of a young woman with a warm expression and bright office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2Xio19iG5Mg_uYoYXyb0doCQP42FJr6Z6cL0ZjGCz9AT964T62HvSnXb8u1qdxWbPTlbu3slYpdQa-ZNU8qT7uViM96PBR0fcBz_dPzgDuVy-EzfhqRVRSIwRg9vw9a4Mgf9NUzl8zEyiBaY9pmMeFFQ1y-kIGB24jPrPIFbAYEwEIyPIxtMUYlKY4eYlMn4nEOwfvSPgvtAUC1j1IJuohdTDTnGHqrATIuszGiAxpJoNHQLEeg6kllJIY5VOLA-4-xb4RkJkIEso"/>
+</div>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 bg-secondary text-on-secondary rounded-full flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-[12px] font-bold">directions_car</span>
+</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg leading-tight">Sarah Chen</h4>
+<p class="text-on-surface-variant text-xs">Sedan • ID: #MM-5032</p>
+</div>
+<button class="bg-gradient-to-br from-[#FFB77D] to-[#FF8C00] text-[#0E0E0E] px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-transform">
+                            Verify
+                        </button>
+</div>
+<!-- Partner Card 3 -->
+<div class="group glass-card p-6 rounded-lg flex items-center gap-6 border border-outline-variant/0 hover:border-outline-variant/20 transition-all duration-300">
+<div class="relative">
+<div class="w-16 h-16 rounded-2xl overflow-hidden bg-surface-container-lowest">
+<img alt="David Okoro" data-alt="Serious but approachable headshot of a middle-aged man in a modern workspace setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOP5SbkHk75UGGPf3M_Rhr8Aor1w4vawXjdr9PztA202vDEk_CiBTFZ-Hn0sewTSWOQkH9kqkvi6h03Qu9OO47G7F9954caQDexH7vwyf9angcwhYcOaF01C6C_t_SHn7WH9QZuxaZd8Y3Mw5RhgH7G3W0f4C0tsiqDbB44lR9NNJ93U1iN3s6TX1T11L_Sy5XKAOPSqSHgFOP_rLiR0qRxPsek3KAZiRxotBd2EbWySo8I0UTPgTkYpk3r8W342XT8gGIuz-U0qIK"/>
+</div>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 bg-secondary text-on-secondary rounded-full flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-[12px] font-bold">electric_moped</span>
+</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg leading-tight">David Okoro</h4>
+<p class="text-on-surface-variant text-xs">Moped • ID: #MM-3381</p>
+</div>
+<button class="bg-gradient-to-br from-[#FFB77D] to-[#FF8C00] text-[#0E0E0E] px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-transform">
+                            Verify
+                        </button>
+</div>
+</div>
+</section>
+</div>
+<!-- System Logs / Activity Feed -->
+<section class="mt-16">
+<h3 class="text-2xl font-bold tracking-tight mb-8">Live Fleet Activity</h3>
+<div class="glass-card rounded-xl overflow-hidden border border-outline-variant/5">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-high/50 border-b border-outline-variant/10">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Time</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Action</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Entity</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-highest/20 transition-colors">
+<td class="px-6 py-4 text-sm text-on-surface-variant">12:45 PM</td>
+<td class="px-6 py-4 text-sm font-semibold">New Registration</td>
+<td class="px-6 py-4 text-sm">Bella Italia Ristorante</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase">Pending Review</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest/20 transition-colors">
+<td class="px-6 py-4 text-sm text-on-surface-variant">12:30 PM</td>
+<td class="px-6 py-4 text-sm font-semibold">Verification Approved</td>
+<td class="px-6 py-4 text-sm">Alex Thompson (Courier)</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-[10px] font-black uppercase">Active</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest/20 transition-colors">
+<td class="px-6 py-4 text-sm text-on-surface-variant">12:12 PM</td>
+<td class="px-6 py-4 text-sm font-semibold">System Alert</td>
+<td class="px-6 py-4 text-sm">Database Sync</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-[10px] font-black uppercase">Success</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/60 backdrop-blur-[24px] rounded-t-[3rem] shadow-2xl md:hidden">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#FFB77D] to-[#FF8C00] text-[#0E0E0E] rounded-full p-3 transition-transform scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#E2E2E2] p-3 hover:bg-[#1F1F1F] rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#E2E2E2] p-3 hover:bg-[#1F1F1F] rounded-full relative" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-orange-500 rounded-full"></span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#E2E2E2] p-3 hover:bg-[#1F1F1F] rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+</body></html>

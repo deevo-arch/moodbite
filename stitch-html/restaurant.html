@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MoodBite | Premium Kitchen Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#6e3900",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#c7e7ff",
+                        "surface-variant": "#353535",
+                        "secondary-fixed": "#d8e2ff",
+                        "primary": "#ffb77d",
+                        "on-secondary-fixed": "#001a41",
+                        "surface-container-highest": "#353535",
+                        "on-secondary-fixed-variant": "#004493",
+                        "tertiary": "#85cfff",
+                        "secondary": "#adc6ff",
+                        "outline": "#a48c7a",
+                        "surface-container-low": "#1b1b1b",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "primary-fixed-dim": "#ffb77d",
+                        "primary-fixed": "#ffdcc3",
+                        "on-surface-variant": "#ddc1ae",
+                        "on-tertiary-fixed": "#001e2e",
+                        "outline-variant": "#564334",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#00b5fc",
+                        "on-secondary-container": "#00285c",
+                        "on-error": "#690005",
+                        "background": "#131313",
+                        "on-primary-container": "#623200",
+                        "secondary-container": "#4b8eff",
+                        "on-tertiary-container": "#004360",
+                        "on-background": "#e2e2e2",
+                        "inverse-surface": "#e2e2e2",
+                        "on-secondary": "#002e69",
+                        "surface": "#131313",
+                        "surface-container": "#1f1f1f",
+                        "tertiary-fixed-dim": "#85cfff",
+                        "surface-tint": "#ffb77d",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed-variant": "#004c6c",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#2f1500",
+                        "on-tertiary": "#00344c",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#303030",
+                        "surface-dim": "#131313",
+                        "on-surface": "#e2e2e2",
+                        "inverse-primary": "#904d00",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-container": "#ff8c00",
+                        "on-primary": "#4d2600"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(31, 31, 31, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .sidebar-gradient {
+            background: linear-gradient(180deg, #1f1f1f 0%, #0e0e0e 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface min-h-screen flex overflow-hidden">
+<!-- Fixed SideNavBar -->
+<aside class="w-72 h-screen sidebar-gradient flex flex-col justify-between p-8 flex-shrink-0">
+<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-1">
+<h1 class="text-primary text-2xl font-bold tracking-tight">MoodBite</h1>
+<p class="text-on-surface-variant text-xs uppercase tracking-[0.2em] font-medium">Premium Kitchen</p>
+</div>
+<nav class="flex flex-col gap-4">
+<div class="flex items-center gap-4 px-5 py-4 rounded-xl bg-surface-container-highest text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<p class="text-sm font-semibold">Dashboard</p>
+</div>
+<div class="flex items-center gap-4 px-5 py-4 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined">shopping_bag</span>
+<p class="text-sm font-medium">Orders</p>
+</div>
+<div class="flex items-center gap-4 px-5 py-4 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<p class="text-sm font-medium">Menu</p>
+</div>
+<div class="flex items-center gap-4 px-5 py-4 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</div>
+</nav>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-4 px-5 py-4 rounded-xl text-error hover:bg-error-container/10 transition-colors cursor-pointer">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium">Logout</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 h-screen overflow-y-auto bg-surface-container-lowest p-10">
+<!-- Header Section -->
+<header class="flex justify-between items-center mb-10">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">Kitchen Command</h2>
+<p class="text-on-surface-variant mt-1">Real-time culinary performance monitoring</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full glass-card flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</div>
+<div class="h-12 w-12 rounded-full overflow-hidden border-2 border-surface-container-highest">
+<img alt="Chef profile" data-alt="Professional chef in a clean white uniform with a black background, high-end commercial photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8BtjBQQEFWIOfVZP7NT6ySJ5DWO3L7HS66x8do9b26gI0sepKnj6fg8TTFNd91ciX2qY1lm2E7Xohiwo8ycC4GjhjHovu3k6EOJ7kc1QPIMnslNXnK3GC09qd4v6GqYpnbuksGFoFDvQQI-zYaSTXnIOsQeKIXDoWWiCiFB7zhkboBlxg8mUZ8DasvcSDFUB23y-pC2c_OidvPxCW4S3UasDv3hnfrW6awh3wDJkn1iRD_gkWq1F3lul_njyfMJfHluUVXWwTmIng"/>
+</div>
+</div>
+</header>
+<!-- Stats Row: Glassmorphism Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<!-- Active Orders -->
+<div class="glass-card p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/10 blur-[60px] rounded-full -mr-16 -mt-16"></div>
+<div class="flex justify-between items-start mb-4">
+<p class="text-on-surface-variant font-medium">Active Orders</p>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-5xl font-bold tracking-tighter text-on-surface">12</p>
+<p class="text-primary text-sm font-medium pb-2">+20% <span class="text-on-surface-variant font-normal">vs last hr</span></p>
+</div>
+<div class="mt-6 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[70%]"></div>
+</div>
+</div>
+<!-- Ready for Pickup -->
+<div class="glass-card p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary-container/10 blur-[60px] rounded-full -mr-16 -mt-16"></div>
+<div class="flex justify-between items-start mb-4">
+<p class="text-on-surface-variant font-medium">Ready for Pickup</p>
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-5xl font-bold tracking-tighter text-on-surface">5</p>
+<p class="text-tertiary text-sm font-medium pb-2">+5% <span class="text-on-surface-variant font-normal">avg time</span></p>
+</div>
+<div class="mt-6 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-[40%]"></div>
+</div>
+</div>
+<!-- Delivered Today -->
+<div class="glass-card p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/10 blur-[60px] rounded-full -mr-16 -mt-16"></div>
+<div class="flex justify-between items-start mb-4">
+<p class="text-on-surface-variant font-medium">Delivered Today</p>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">delivery_dining</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-5xl font-bold tracking-tighter text-on-surface">48</p>
+<p class="text-secondary text-sm font-medium pb-2">+15% <span class="text-on-surface-variant font-normal">vs yesterday</span></p>
+</div>
+<div class="mt-6 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[85%]"></div>
+</div>
+</div>
+</div>
+<!-- Incoming Orders Section -->
+<section>
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-2xl font-bold tracking-tight text-on-surface">Incoming Orders</h3>
+<div class="flex gap-3">
+<button class="px-5 py-2 glass-card rounded-full text-sm font-medium text-on-surface">Newest First</button>
+<button class="px-5 py-2 glass-card rounded-full text-sm font-medium text-on-surface-variant">Priority Only</button>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<!-- Order Card 1 -->
+<div class="glass-card rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center group hover:bg-surface-container/80 transition-all">
+<div class="w-full md:w-56 h-40 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Gourmet Burger" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-110" data-alt="Close-up of a premium truffle burger with melting cheese and dark bun on a slate background, dramatic kitchen lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOTQY2PKFKMVHLCpePWv8evsSH8ZtWHWHeQkqH4nH2L698qC8GWpVZw474vtpgFQkM2eGouGdVMK_CKVhBn9AHFIbrYzlAqUQdkc0r5g5CoOeKNL0EM1yz3NZ1NRypRUBM2belF7zkOLey4xh3gPevUA-su7RJFTm5gY2Xu7yUCAackKWQdDRUvnhssIsD8fBsFgQSAJ1flGbJn3mYOH0iCIkZ8C1HJDTboLMR2igT1GCSipdTwk9G2vCLgRdAtR9y-I1D9gYh0uGF"/>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">New</span>
+<span class="text-on-surface-variant text-sm font-medium">Placed 4 mins ago</span>
+</div>
+<h4 class="text-2xl font-bold text-on-surface mb-2">Julian Voss</h4>
+<p class="text-on-surface-variant text-lg">2x Truffle Burger, 1x Obsidian Fries, 1x Charcoal Lemonade</p>
+<div class="mt-4 flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-wider">Total Amount</span>
+<span class="text-xl font-bold text-primary">$42.00</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-wider">Type</span>
+<span class="text-sm font-medium text-on-surface">Standard Delivery</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3 w-full md:w-auto">
+<button class="w-full md:w-48 py-4 px-6 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold text-sm tracking-wide shadow-[0_10px_30px_-10px_rgba(255,140,0,0.4)] hover:shadow-[0_15px_40px_-10px_rgba(255,140,0,0.6)] transition-all">
+                            Accept &amp; Prepare
+                        </button>
+<button class="w-full md:w-48 py-4 px-6 rounded-full glass-card text-on-surface font-semibold text-sm hover:bg-surface-container transition-all">
+                            View Details
+                        </button>
+</div>
+</div>
+<!-- Order Card 2 -->
+<div class="glass-card rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center group hover:bg-surface-container/80 transition-all">
+<div class="w-full md:w-56 h-40 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Luxury Pasta" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-110" data-alt="Exquisite squid ink pasta with seafood, served on a dark ceramic plate with golden garnish, editorial food photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfb2HRLg8MSda_I2BwHAqtIfSnqLHY2hhh31xEEDnY0ZILasRZXMgo_fq9fQBpvaCJEj4tY-Q0dd_CmHizuukxOnIOnTqzEcvcAN5yzkv36YfoJl2CDZVi9vrX0zcfsWejd2DpMMA4isN4e2tH5koJZxovDP-3KPRIXPSbdsbxM4bnx_1ZDlEm66WwR_M6em_zVoUpj14hGirn-rEHhf5lJSIShapdPL1VLYq0VGBoyVtxdTtgjcQJQ_hQWYWQKYeWdvxZE-xWjP2a"/>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Preparing</span>
+<span class="text-on-surface-variant text-sm font-medium">Placed 8 mins ago</span>
+</div>
+<h4 class="text-2xl font-bold text-on-surface mb-2">Elena Rossi</h4>
+<p class="text-on-surface-variant text-lg">1x Squid Ink Pasta, 2x Dark Chocolate Mousse, 1x Pinot Noir</p>
+<div class="mt-4 flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-wider">Total Amount</span>
+<span class="text-xl font-bold text-primary">$65.50</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-wider">Type</span>
+<span class="text-sm font-medium text-on-surface">Priority Pickup</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3 w-full md:w-auto">
+<button class="w-full md:w-48 py-4 px-6 rounded-full bg-gradient-to-r from-tertiary to-tertiary-container text-on-tertiary font-bold text-sm tracking-wide shadow-[0_10px_30px_-10px_rgba(0,181,252,0.4)] transition-all">
+                            Ready for Pickup
+                        </button>
+<button class="w-full md:w-48 py-4 px-6 rounded-full glass-card text-on-surface font-semibold text-sm hover:bg-surface-container transition-all">
+                            Print Label
+                        </button>
+</div>
+</div>
+<!-- Order Card 3 -->
+<div class="glass-card rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center group hover:bg-surface-container/80 transition-all opacity-80">
+<div class="w-full md:w-56 h-40 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Gourmet Snacks" class="w-full h-full object-cover grayscale" data-alt="Artisanal deep fried snacks on a dark wooden board, warm amber lighting, rustic luxury style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChw5WftI4KxWZWMJ42iiihJPFV1aTjxinzcyoE-874QNFeqVHmE6yQUwmHQeO2RKEmYb48IAVF8fbubz-HzgVrv5n-5qobN88u5H1aVp_XDr2ihigtm1_ocHC-wDgrUqlUAWxJn-OuYZ_k-e4b-dZCxO2m1wNxoxswYc-k4ItFWwwcsMX6aVapXBEWM9Sozr0OASUkS_yzecIEX9_n84yeDCc8pp6XymFP2B33JI05QJOgw8vuQFMFGR3qSePNwvuBsBP-N3hNf7L3"/>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-surface-container-highest text-on-surface-variant text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Late</span>
+<span class="text-error text-sm font-medium">Placed 22 mins ago</span>
+</div>
+<h4 class="text-2xl font-bold text-on-surface mb-2">Marcus Thorne</h4>
+<p class="text-on-surface-variant text-lg">3x Wagyu Sliders, 1x Truffle Aioli, 2x IPA Craft Beer</p>
+<div class="mt-4 flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-wider">Total Amount</span>
+<span class="text-xl font-bold text-primary">$88.20</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3 w-full md:w-auto">
+<button class="w-full md:w-48 py-4 px-6 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold text-sm tracking-wide shadow-[0_10px_30px_-10px_rgba(255,140,0,0.4)] transition-all">
+                            Accept &amp; Prepare
+                        </button>
+<button class="w-full md:w-48 py-4 px-6 rounded-full glass-card text-on-surface font-semibold text-sm hover:bg-surface-container transition-all">
+                            Contact Customer
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

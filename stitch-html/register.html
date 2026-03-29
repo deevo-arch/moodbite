@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#ffb77d",
+              "surface-container-low": "#1b1b1b",
+              "surface-bright": "#393939",
+              "primary": "#ffb77d",
+              "on-primary-fixed-variant": "#6e3900",
+              "error": "#ffb4ab",
+              "primary-fixed": "#ffdcc3",
+              "surface-container-lowest": "#0e0e0e",
+              "on-tertiary-container": "#004360",
+              "secondary-container": "#4b8eff",
+              "outline-variant": "#564334",
+              "surface-container-highest": "#353535",
+              "on-tertiary-fixed-variant": "#004c6c",
+              "tertiary-fixed": "#c7e7ff",
+              "surface-container": "#1f1f1f",
+              "on-secondary-fixed-variant": "#004493",
+              "tertiary-fixed-dim": "#85cfff",
+              "on-secondary": "#002e69",
+              "on-tertiary": "#00344c",
+              "surface-dim": "#131313",
+              "on-secondary-container": "#00285c",
+              "primary-container": "#ff8c00",
+              "on-primary": "#4d2600",
+              "on-background": "#e2e2e2",
+              "on-tertiary-fixed": "#001e2e",
+              "on-primary-fixed": "#2f1500",
+              "surface": "#131313",
+              "surface-tint": "#ffb77d",
+              "secondary-fixed": "#d8e2ff",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "inverse-primary": "#904d00",
+              "outline": "#a48c7a",
+              "tertiary-container": "#00b5fc",
+              "on-secondary-fixed": "#001a41",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#adc6ff",
+              "on-surface-variant": "#ddc1ae",
+              "on-primary-container": "#623200",
+              "surface-variant": "#353535",
+              "inverse-surface": "#e2e2e2",
+              "inverse-on-surface": "#303030",
+              "background": "#131313",
+              "surface-container-high": "#2a2a2a",
+              "secondary": "#adc6ff",
+              "on-surface": "#e2e2e2",
+              "tertiary": "#85cfff"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .glass-card {
+        background: rgba(31, 31, 31, 0.6);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Hero Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="cinematic close-up of gourmet steaming dish on a dark rustic table with warm orange ambient lighting and bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk0Qdu1_d5rSxd0SkGdMkLzH_amVqoIF9LtQon3OSaFUTh8cl-gPRX-N4oLUZibFBEYIcejV4ujvLPLj5qWs1yEWoB6un_2BN0mwwGNVrwN4SsLWJ11KJEdLHm9orSuG67ShhaKtU8RHn_EIXsce9BzIeUEDWQkZ9ktos8lmFrHEoBdQaDGfI4L008tfeTqOCfFau72JHal4UhEiZ1TDmVw5d8hO-_OMFGbYDVkcEmegCysfwWNTgMeRc0WKQT8Zrr2lTVjHp0Limj"/>
+<div class="absolute inset-0 bg-gradient-to-b from-surface via-surface/80 to-surface"></div>
+</div>
+<!-- Top Navigation Anchor (Suppressed Shell, but Brand Presence maintained) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-6 w-full max-w-none no-border bg-gradient-to-b from-[#131313] to-transparent">
+<div class="text-2xl font-black text-[#FFB77D] tracking-tighter italic font-headline">MoodBite</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#E2E2E2]/60 hover:text-[#FFB77D] transition-colors duration-300 cursor-pointer">help_outline</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full max-w-md px-6 py-12">
+<div class="glass-card rounded-xl p-8 md:p-10 flex flex-col items-center gap-8">
+<!-- Header Section -->
+<div class="text-center space-y-2">
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface font-headline leading-tight">Create your account</h1>
+<p class="text-on-surface-variant/80 text-sm font-medium">Join the exclusive culinary circle</p>
+</div>
+<!-- Registration Form -->
+<form class="w-full space-y-6">
+<!-- Role Selector (Styled Tabs) -->
+<div class="flex flex-col gap-3">
+<label class="text-xs font-bold tracking-widest uppercase text-on-surface-variant/60 px-4">Identify Your Role</label>
+<div class="grid grid-cols-1 gap-2 bg-surface-container-lowest p-2 rounded-xl">
+<label class="relative flex items-center p-3 cursor-pointer group rounded-lg transition-all bg-primary-container text-on-primary-container shadow-lg">
+<input checked="" class="sr-only" name="role" type="radio"/>
+<span class="material-symbols-outlined mr-3">restaurant</span>
+<span class="text-sm font-semibold">I want to eat</span>
+</label>
+<label class="relative flex items-center p-3 cursor-pointer group rounded-lg hover:bg-surface-container-highest/40 transition-all text-on-surface-variant">
+<input class="sr-only" name="role" type="radio"/>
+<span class="material-symbols-outlined mr-3">storefront</span>
+<span class="text-sm font-medium">I own a restaurant</span>
+</label>
+<label class="relative flex items-center p-3 cursor-pointer group rounded-lg hover:bg-surface-container-highest/40 transition-all text-on-surface-variant">
+<input class="sr-only" name="role" type="radio"/>
+<span class="material-symbols-outlined mr-3">delivery_dining</span>
+<span class="text-sm font-medium">I want to deliver</span>
+</label>
+</div>
+</div>
+<!-- Input Fields -->
+<div class="space-y-4">
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors">person</span>
+</div>
+<input class="w-full bg-surface-container-highest text-on-surface rounded-full py-4 pl-14 pr-6 border-none focus:ring-2 focus:ring-primary/30 transition-all placeholder:text-on-surface-variant/50 text-base" placeholder="Full Name" type="text"/>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors">mail</span>
+</div>
+<input class="w-full bg-surface-container-highest text-on-surface rounded-full py-4 pl-14 pr-6 border-none focus:ring-2 focus:ring-primary/30 transition-all placeholder:text-on-surface-variant/50 text-base" placeholder="Email Address" type="email"/>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors">lock</span>
+</div>
+<input class="w-full bg-surface-container-highest text-on-surface rounded-full py-4 pl-14 pr-6 border-none focus:ring-2 focus:ring-primary/30 transition-all placeholder:text-on-surface-variant/50 text-base" placeholder="Password" type="password"/>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-extrabold text-lg py-5 rounded-full shadow-2xl shadow-primary-container/20 active:scale-95 transition-all flex justify-center items-center gap-2" type="submit">
+                    Create Account
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<!-- Footer Link -->
+<div class="flex flex-col items-center gap-4">
+<p class="text-on-surface-variant/60 text-sm">
+                    Already have an account? 
+                    <a class="text-primary-fixed-dim font-bold hover:underline transition-all" href="#">Sign In</a>
+</p>
+<div class="flex items-center gap-6 mt-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center cursor-pointer hover:bg-surface-bright transition-colors">
+<img class="w-5 h-5 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" data-alt="google icon logo simple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIqueKOMfv6za0SXZxvKoBQ086Ryi-tTIlWgIzVXSuA-G1luMCIaHMY5yNxuCAvhE3UaHw_fS6ad3hWKAaYSs1o1LfTFzpCD86LjZiXOj7qom_YYE_ljRZeT2z7sl-Di0XxFAwSCFMFQw0a2aRj6WkY6vtHWHS4y2wGE0rK2CKffB1phq8LRW8XKoD6-Z-kGr6qsy7cbRWiUNbuX6uNlzhAy02fCID5PeS4ssA2xY8rDYlvQJnAQOZUynyBjyQ5_MYsSnehWukEcjb"/>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center cursor-pointer hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">ios</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Privacy Policy Hint -->
+<p class="text-center mt-8 text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/40 leading-loose px-8">
+            By creating an account, you agree to our <span class="text-on-surface-variant/60">Terms of Service</span> and <span class="text-on-surface-variant/60">Privacy Policy</span>.
+        </p>
+</main>
+<!-- Decorative Elements -->
+<div class="absolute top-1/4 -left-20 w-64 h-64 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 blur-[120px] rounded-full pointer-events-none"></div>
+</body></html>

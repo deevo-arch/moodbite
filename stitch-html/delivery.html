@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MoodBite | Driver Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#4d2600",
+              "surface-container-lowest": "#0e0e0e",
+              "primary-container": "#ff8c00",
+              "on-surface": "#e2e2e2",
+              "inverse-primary": "#904d00",
+              "surface-dim": "#131313",
+              "inverse-on-surface": "#303030",
+              "surface-container-high": "#2a2a2a",
+              "on-tertiary": "#00344c",
+              "on-primary-fixed": "#2f1500",
+              "error-container": "#93000a",
+              "surface-bright": "#393939",
+              "on-tertiary-fixed-variant": "#004c6c",
+              "surface-tint": "#ffb77d",
+              "tertiary-fixed-dim": "#85cfff",
+              "surface-container": "#1f1f1f",
+              "surface": "#131313",
+              "on-secondary": "#002e69",
+              "secondary-container": "#4b8eff",
+              "on-tertiary-container": "#004360",
+              "on-background": "#e2e2e2",
+              "inverse-surface": "#e2e2e2",
+              "on-primary-container": "#623200",
+              "background": "#131313",
+              "tertiary-container": "#00b5fc",
+              "on-secondary-container": "#00285c",
+              "on-error": "#690005",
+              "outline-variant": "#564334",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-fixed": "#001e2e",
+              "secondary-fixed-dim": "#adc6ff",
+              "primary-fixed-dim": "#ffb77d",
+              "primary-fixed": "#ffdcc3",
+              "on-surface-variant": "#ddc1ae",
+              "surface-container-low": "#1b1b1b",
+              "outline": "#a48c7a",
+              "secondary": "#adc6ff",
+              "tertiary": "#85cfff",
+              "on-secondary-fixed-variant": "#004493",
+              "surface-container-highest": "#353535",
+              "tertiary-fixed": "#c7e7ff",
+              "surface-variant": "#353535",
+              "secondary-fixed": "#d8e2ff",
+              "primary": "#ffb77d",
+              "on-secondary-fixed": "#001a41",
+              "error": "#ffb4ab",
+              "on-primary-fixed-variant": "#6e3900"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(31, 31, 31, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="bg-neutral-900/60 backdrop-blur-xl fixed top-0 w-full z-50 shadow-2xl shadow-black/20">
+<div class="flex justify-between items-center w-full px-8 py-4 mx-auto max-w-7xl">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-orange-400 dark:text-orange-500">MoodBite</span>
+<div class="hidden md:flex gap-6">
+<a class="text-orange-400 border-b-2 border-orange-500 pb-1 font-sans tracking-tight antialiased" href="#">Dashboard</a>
+<a class="text-neutral-400 hover:text-neutral-100 transition-colors font-sans tracking-tight antialiased" href="#">Active Orders</a>
+<a class="text-neutral-400 hover:text-neutral-100 transition-colors font-sans tracking-tight antialiased" href="#">Earnings</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3 bg-neutral-800/40 px-4 py-2 rounded-full">
+<div class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></div>
+<span class="text-orange-400 dark:text-orange-300 font-sans text-sm font-bold uppercase tracking-widest">Delivery</span>
+</div>
+<div class="flex items-center gap-4 border-l border-neutral-800 pl-6">
+<div class="text-right">
+<p class="text-sm font-bold text-on-surface">Alex Chen</p>
+<p class="text-[10px] text-neutral-500 uppercase tracking-tighter">Elite Courier</p>
+</div>
+<img alt="Driver Profile Avatar" class="w-10 h-10 rounded-full object-cover ring-2 ring-orange-500/20" data-alt="Professional headshot of a young man with a friendly expression, wearing a sleek black jacket in a modern studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApjFAaL-FGE63MfOw9bXN66BLvXlDbeyi7wwvLhBlhLM3hpg2L73IcCfVmHyOHTHJ3oK51XRZQsLk1esueTCAyz_sJ6m_G_H76gx7iMUQrk6frVfbo7v4wT3lS7QXwf8QhnSlJH4AGQrytvS2ABYpvyvzpG6yea50HmbgJX12mqqvlzeHz9yrBpBcjVEiDTdymgA0idLihyYjvNn22uCx032u5hix2KTdqrIe5GCzFJLOEv2wY3C9r2TDEjhwGHTreduHrdu2D-bv5"/>
+<button class="text-neutral-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Suppressed for focused dashboard experience, but keeping structural space) -->
+<aside class="hidden xl:flex flex-col h-screen w-64 fixed left-0 top-0 border-r border-neutral-800/50 bg-neutral-900 p-4 pt-24">
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 text-orange-400 bg-orange-500/10 rounded-xl transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 hover:text-neutral-200 hover:bg-neutral-800/50 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="text-sm font-medium tracking-wide">Active Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 hover:text-neutral-200 hover:bg-neutral-800/50 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium tracking-wide">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 hover:text-neutral-200 hover:bg-neutral-800/50 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-sm font-medium tracking-wide">Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-500 hover:text-neutral-200 hover:bg-neutral-800/50 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium tracking-wide">Settings</span>
+</a>
+</div>
+<div class="mt-auto pb-8">
+<button class="w-full py-4 bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl font-bold text-on-primary shadow-lg shadow-orange-500/20 active:scale-95 transition-transform">
+                Go Online
+            </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="xl:ml-64 pt-24 pb-12 px-8 max-w-7xl mx-auto">
+<!-- Section 2: Current Delivery (Priority 1 Visual) -->
+<section class="mb-12">
+<h2 class="text-[0.75rem] font-bold uppercase tracking-[0.2em] text-secondary mb-6 flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+                In Progress
+            </h2>
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high border-none group">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<!-- Map/Visual Route -->
+<div class="relative h-64 lg:h-auto min-h-[300px] bg-surface-container-highest">
+<img alt="Navigation map view" class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" data-alt="Modern dark-themed GPS navigation map showing a blue route line through city streets with minimalist pins" data-location="New York" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXAdHHh21bJGwVN6TAcHkw0Rw-ejQRpcaij8kzWSygP8Hr-nvP8q-F1DlspV1kFCdAn3_G7QGRqcdXkbJl5oJ_MEiJph4h36ctnbuXe020Xhuqv4QyKVQn0QoW0yPS6YSM0KbYI2MF94berOlUppu-Ar0v37o24MoZr8CImDyZluTqI4bK-A6uQvrLi8OcuTYlQElQ6aL1Ozt55jRRXCANT4TWeWYOCtX9lS2pGDAFzZ6ObAJOYsvbO9-lRhzFvlla3XS4qLJIxAcn"/>
+<div class="absolute inset-0 flex flex-col justify-center items-center p-8">
+<div class="flex items-center gap-4 w-full max-w-xs">
+<div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center shadow-2xl shadow-secondary/40">
+<span class="material-symbols-outlined text-on-secondary">restaurant</span>
+</div>
+<div class="flex-1 h-0.5 border-t-2 border-dashed border-secondary/50 relative">
+<div class="absolute top-1/2 left-0 w-1/2 h-1 bg-secondary -translate-y-1/2 shadow-[0_0_15px_rgba(173,198,255,0.8)]"></div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border-2 border-secondary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">home_pin</span>
+</div>
+</div>
+<div class="mt-6 text-center">
+<p class="text-secondary font-bold text-lg">Picked Up</p>
+<p class="text-sm text-neutral-400">Arriving in 8 mins</p>
+</div>
+</div>
+</div>
+<!-- Delivery Details -->
+<div class="p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-2xl font-black tracking-tight text-white mb-1">L'Artisan Trattoria</h3>
+<p class="text-neutral-400 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span>
+                                        422 Greenwich St, Tribeca
+                                    </p>
+</div>
+<div class="px-4 py-2 bg-secondary/10 rounded-full">
+<span class="text-secondary text-xs font-bold">$12.50 + Tip</span>
+</div>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-neutral-400">person</span>
+</div>
+<div>
+<p class="text-xs text-neutral-500 font-medium uppercase tracking-wider">Customer</p>
+<p class="text-white font-bold">Julianne Moore</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border-l-4 border-secondary">
+<p class="text-xs text-neutral-500 mb-2 uppercase font-bold tracking-tighter">Items (2)</p>
+<p class="text-on-surface text-sm font-medium">1x Truffle Pizza, 1x Gelato</p>
+</div>
+</div>
+</div>
+<button class="w-full py-5 bg-gradient-to-r from-secondary-container to-[#007AFF] text-white rounded-full font-black text-lg shadow-xl shadow-secondary/20 hover:scale-[1.02] active:scale-95 transition-all">
+                            Complete Delivery
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: Available Pickups -->
+<section class="mb-12">
+<div class="flex justify-between items-end mb-6">
+<h2 class="text-[0.75rem] font-bold uppercase tracking-[0.2em] text-primary flex items-center gap-2">
+<span class="w-2 h-2 bg-primary rounded-full animate-ping"></span>
+                    Available Near You
+                </h2>
+<a class="text-xs font-bold text-neutral-500 hover:text-white transition-colors" href="#">View Map View</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="glass-card rounded-xl p-6 flex flex-col justify-between min-h-[320px] relative group overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-[10px] font-bold px-3 py-1 bg-primary/20 text-primary rounded-full">1.2 miles</span>
+</div>
+<div>
+<div class="mb-4">
+<h3 class="text-xl font-bold text-white leading-tight">Sakura Sushi Bar</h3>
+<p class="text-neutral-500 text-xs mt-1">112 Bowery St</p>
+</div>
+<div class="space-y-3 mb-6">
+<div class="flex items-center gap-2 text-neutral-400">
+<span class="material-symbols-outlined text-sm">person</span>
+<span class="text-xs font-medium">Marcus V.</span>
+</div>
+<div class="flex items-center gap-2 text-neutral-400">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+<span class="text-xs font-medium">3 Items • Premium Packaging</span>
+</div>
+</div>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-container rounded-full font-black tracking-wide shadow-lg shadow-primary/10 hover:shadow-primary/30 active:scale-95 transition-all">
+                        Accept &amp; Go
+                    </button>
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card rounded-xl p-6 flex flex-col justify-between min-h-[320px] relative group overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-[10px] font-bold px-3 py-1 bg-primary/20 text-primary rounded-full">0.8 miles</span>
+</div>
+<div>
+<div class="mb-4">
+<h3 class="text-xl font-bold text-white leading-tight">The Burger Lab</h3>
+<p class="text-neutral-500 text-xs mt-1">89 Lafayette St</p>
+</div>
+<div class="space-y-3 mb-6">
+<div class="flex items-center gap-2 text-neutral-400">
+<span class="material-symbols-outlined text-sm">person</span>
+<span class="text-xs font-medium">Sarah Jenkins</span>
+</div>
+<div class="flex items-center gap-2 text-neutral-400">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+<span class="text-xs font-medium">2 Items • Fragile</span>
+</div>
+</div>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-container rounded-full font-black tracking-wide shadow-lg shadow-primary/10 hover:shadow-primary/30 active:scale-95 transition-all">
+                        Accept &amp; Go
+                    </button>
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card rounded-xl p-6 flex flex-col justify-between min-h-[320px] relative group overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-[10px] font-bold px-3 py-1 bg-primary/20 text-primary rounded-full">2.4 miles</span>
+</div>
+<div>
+<div class="mb-4">
+<h3 class="text-xl font-bold text-white leading-tight">Green Leaf Cafe</h3>
+<p class="text-neutral-500 text-xs mt-1">204 Hudson St</p>
+</div>
+<div class="space-y-3 mb-6">
+<div class="flex items-center gap-2 text-neutral-400">
+<span class="material-symbols-outlined text-sm">person</span>
+<span class="text-xs font-medium">David Miller</span>
+</div>
+<div class="flex items-center gap-2 text-neutral-400">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+<span class="text-xs font-medium">5 Items • Hot Drinks</span>
+</div>
+</div>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-container rounded-full font-black tracking-wide shadow-lg shadow-primary/10 hover:shadow-primary/30 active:scale-95 transition-all">
+                        Accept &amp; Go
+                    </button>
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+</div>
+</div>
+</section>
+<!-- Section 3: Completed Today -->
+<section>
+<h2 class="text-[0.75rem] font-bold uppercase tracking-[0.2em] text-neutral-500 mb-6 flex items-center gap-2">
+<span class="w-2 h-2 bg-neutral-600 rounded-full"></span>
+                Completed Deliveries Today
+            </h2>
+<div class="space-y-4 opacity-60 hover:opacity-100 transition-opacity duration-500">
+<!-- Past Delivery 1 -->
+<div class="bg-surface-container rounded-xl p-5 flex flex-wrap items-center justify-between gap-4 border-l-2 border-neutral-700">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-neutral-500">check_circle</span>
+</div>
+<div>
+<h4 class="text-white font-bold">Joe's Pizza</h4>
+<p class="text-neutral-500 text-xs">Delivered to Carmine St • 12:45 PM</p>
+</div>
+</div>
+<div class="flex gap-8">
+<div class="text-center">
+<p class="text-xs text-neutral-500 uppercase font-bold tracking-tighter">Distance</p>
+<p class="text-sm text-on-surface">3.2 mi</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-neutral-500 uppercase font-bold tracking-tighter">Earnings</p>
+<p class="text-sm text-primary-fixed-dim font-bold">$9.00</p>
+</div>
+</div>
+</div>
+<!-- Past Delivery 2 -->
+<div class="bg-surface-container rounded-xl p-5 flex flex-wrap items-center justify-between gap-4 border-l-2 border-neutral-700">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-neutral-500">check_circle</span>
+</div>
+<div>
+<h4 class="text-white font-bold">Pasta House</h4>
+<p class="text-neutral-500 text-xs">Delivered to W 4th St • 11:15 AM</p>
+</div>
+</div>
+<div class="flex gap-8">
+<div class="text-center">
+<p class="text-xs text-neutral-500 uppercase font-bold tracking-tighter">Distance</p>
+<p class="text-sm text-on-surface">1.5 mi</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-neutral-500 uppercase font-bold tracking-tighter">Earnings</p>
+<p class="text-sm text-primary-fixed-dim font-bold">$14.20</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB for Support (Contextual) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-surface-container-highest text-white rounded-full flex items-center justify-center shadow-2xl border border-white/5 active:scale-90 transition-transform z-40 group">
+<span class="material-symbols-outlined text-3xl group-hover:text-primary transition-colors">support_agent</span>
+</button>
+</body></html>

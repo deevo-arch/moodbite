@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MoodBite | Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#001a41",
+              "on-primary-fixed": "#2f1500",
+              "on-tertiary-fixed": "#001e2e",
+              "surface-tint": "#ffb77d",
+              "secondary": "#adc6ff",
+              "surface-variant": "#353535",
+              "on-primary": "#4d2600",
+              "secondary-fixed": "#d8e2ff",
+              "outline-variant": "#564334",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#adc6ff",
+              "on-primary-container": "#623200",
+              "surface-container-lowest": "#0e0e0e",
+              "surface": "#131313",
+              "tertiary-fixed-dim": "#85cfff",
+              "tertiary-fixed": "#c7e7ff",
+              "outline": "#a48c7a",
+              "inverse-primary": "#904d00",
+              "tertiary-container": "#00b5fc",
+              "on-tertiary-fixed-variant": "#004c6c",
+              "error": "#ffb4ab",
+              "surface-dim": "#131313",
+              "on-tertiary": "#00344c",
+              "on-secondary-container": "#00285c",
+              "on-surface": "#e2e2e2",
+              "on-tertiary-container": "#004360",
+              "primary-fixed-dim": "#ffb77d",
+              "on-background": "#e2e2e2",
+              "primary-fixed": "#ffdcc3",
+              "inverse-surface": "#e2e2e2",
+              "surface-bright": "#393939",
+              "secondary-container": "#4b8eff",
+              "surface-container-low": "#1b1b1b",
+              "on-secondary": "#002e69",
+              "inverse-on-surface": "#303030",
+              "error-container": "#93000a",
+              "surface-container": "#1f1f1f",
+              "primary-container": "#ff8c00",
+              "primary": "#ffb77d",
+              "on-secondary-fixed-variant": "#004493",
+              "surface-container-highest": "#353535",
+              "on-surface-variant": "#ddc1ae",
+              "tertiary": "#85cfff",
+              "surface-container-high": "#2a2a2a",
+              "on-primary-fixed-variant": "#6e3900",
+              "on-error-container": "#ffdad6",
+              "background": "#131313"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(19, 19, 19, 0.6);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0e0e0e;
+      }
+    </style>
+</head>
+<body class="text-on-surface overflow-hidden">
+<!-- Main Content Background (Simulated App Canvas) -->
+<main class="min-h-screen w-full flex flex-col p-8 opacity-40 select-none pointer-events-none">
+<nav class="flex justify-between items-center mb-12">
+<span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFB77D] to-[#FF8C00]">MoodBite</span>
+<div class="flex gap-6">
+<span class="w-10 h-10 rounded-full bg-surface-container"></span>
+<span class="w-10 h-10 rounded-full bg-surface-container"></span>
+</div>
+</nav>
+<div class="grid grid-cols-2 gap-8">
+<div class="h-96 rounded-xl bg-surface-container-high"></div>
+<div class="h-96 rounded-xl bg-surface-container-high"></div>
+<div class="h-64 rounded-xl bg-surface-container-high col-span-2"></div>
+</div>
+</main>
+<!-- Overlay Backdrop -->
+<div class="fixed inset-0 bg-black/40 z-40"></div>
+<!-- Checkout Slide-Over Panel -->
+<aside class="fixed right-0 top-0 h-full w-full max-w-lg glass-panel z-50 rounded-l-xl shadow-2xl flex flex-col border-l border-white/5">
+<!-- Header -->
+<header class="p-8 pb-4 flex justify-between items-center">
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface">Your Cart <span class="text-primary font-medium text-xl ml-2 opacity-60">(3 items)</span></h2>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest/50 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<!-- Cart Items Scroll Area -->
+<div class="flex-1 overflow-y-auto px-8 py-4 space-y-6">
+<!-- Item 1 -->
+<div class="flex gap-4 items-center group">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-low">
+<img alt="Artisan Truffle Pizza" class="w-full h-full object-cover" data-alt="Gourmet artisan pizza topped with fresh truffles and melted cheese on a dark rustic table with warm atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUoRPoLATGqrCmmgy0mhG8Ahc_-efPitn4l5y4Gq1OCLXUJRDPNGjaYPwEfHlYMVHRw8OCg2hHobhhCZhSca07jutx1SAI-k2VUDHrYG1w06loAl9-KbdvK6Mk5QeCrvCz4jud1ZQxyj4m52mFwhF-upKIFD_soFSckTcV7GY_UgUSYBtkkMC3IvoE3ZdsQlWRlg0iLtga4qZYqQ42okSQElkFVyzzUQ_qlcjJJfYSC371e5mTy33oZGtyq0Ydgc41MI1BnVB8_0uG"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg text-on-surface truncate">Artisan Truffle Pizza</h3>
+<button class="text-on-surface/30 hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+<p class="text-sm text-on-surface/60 mb-3">The Crust &amp; Co. • 12" hand-tossed</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center bg-surface-container-high rounded-full px-3 py-1 gap-4">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="remove">remove</span></button>
+<span class="font-bold text-sm">1</span>
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="add">add</span></button>
+</div>
+<span class="font-bold text-primary">$24.00</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 items-center group">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-low">
+<img alt="Dark Decadence Cake" class="w-full h-full object-cover" data-alt="Rich dark chocolate lava cake with a melting warm center on a slate plate with dramatic side lighting and cocoa dusting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjEA_k-edUP3xzgYvSr3JYF3yqCd88WaRQlydHxT9l1Tc2-llGv0-osGQc_0vOiUf6N2hAgS0Z9Me7EN0VoQKn3-acbr-5IyXlwHgkbLQ26Q_p7VgU3gZfAPJrwNevzF_6U2CNY4fghXLneq2wRjIjrlvWW_MZZw2UfL1kVVqWJXXOQ8MlqD5mhJv-0ww_MItLkKA2EvmyL1yzEoGDyzXopmgA4lcFYQIitYkz5I-WwBWXjrd8TD9uii6qLz30OcxL8A52U9HhnjFR"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg text-on-surface truncate">Dark Decadence Cake</h3>
+<button class="text-on-surface/30 hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+<p class="text-sm text-on-surface/60 mb-3">Velvet Patisserie • warm lava center</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center bg-surface-container-high rounded-full px-3 py-1 gap-4">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="remove">remove</span></button>
+<span class="font-bold text-sm">1</span>
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="add">add</span></button>
+</div>
+<span class="font-bold text-primary">$14.00</span>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex gap-4 items-center group">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-low">
+<img alt="Oishi Ramen" class="w-full h-full object-cover" data-alt="Steaming bowl of spicy tonkotsu ramen with soft boiled egg and nori in a dark moody Japanese restaurant setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8R6zDXG-_Rhi58LHBqYa_3WrbyzSZjIqtDVRdBvTUhbSh6Lmmbf8wj7YVf84C7_rxLwlflOrPIQ3Rm8SF6LoLSM2uayb9xR86ExnB-v2MyNW0QsKr-3C7K9It8ZzRiMDbvdQAerUbIohmAKLwL-bgI6ym3DlfrL9lU8x64hBozUmmRlad4fi9JTorgnwY_58DF7uWUrAmnG2oq8VfTpOdUCEW1Iv62XGtP5-njcpTCp73BPprzN0FYKOqeXbKNJHWkOv19wD0VqC4"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg text-on-surface truncate">Oishi Ramen</h3>
+<button class="text-on-surface/30 hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+<p class="text-sm text-on-surface/60 mb-3">Zen Garden • spicy tonkotsu broth</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center bg-surface-container-high rounded-full px-3 py-1 gap-4">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="remove">remove</span></button>
+<span class="font-bold text-sm">1</span>
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="add">add</span></button>
+</div>
+<span class="font-bold text-primary">$19.00</span>
+</div>
+</div>
+</div>
+<!-- Promotion Input -->
+<div class="mt-8 pt-8 border-t border-white/5">
+<div class="relative">
+<input class="w-full bg-surface-container-highest/30 border-none rounded-full py-4 px-6 text-on-surface focus:ring-1 focus:ring-primary/30 placeholder:text-on-surface/30" placeholder="Promo code" type="text"/>
+<button class="absolute right-2 top-2 bottom-2 px-6 bg-surface-container-highest rounded-full text-sm font-bold hover:bg-surface-container-high transition-colors">Apply</button>
+</div>
+</div>
+</div>
+<!-- Summary Section -->
+<footer class="p-8 bg-surface-container-lowest/80 backdrop-blur-md rounded-tl-xl space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-on-surface/60">Subtotal</span>
+<span class="font-medium">$57.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface/60">Delivery Fee</span>
+<span class="font-medium">$4.99</span>
+</div>
+</div>
+<div class="pt-4 border-t border-white/5 flex justify-between items-center mb-6">
+<span class="text-xl font-bold">Total</span>
+<span class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFB77D] to-[#FF8C00] tracking-tighter">$61.99</span>
+</div>
+<button class="w-full py-5 bg-gradient-to-r from-[#FFB77D] to-[#FF8C00] text-on-primary-container font-black text-lg rounded-full shadow-[0_20px_40px_rgba(255,140,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+                Place Order
+                <span class="material-symbols-outlined font-bold" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center text-[10px] text-on-surface/30 uppercase tracking-widest pt-2">Secure encrypted checkout</p>
+</footer>
+</aside>
+</body></html>
