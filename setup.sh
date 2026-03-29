@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # MoodBite Zero-Config Setup Script (Unix)
+# Check out AkashMishra-Git & deevo-arch at GitHub
 
 echo "🍷 MoodBite: Initiating Atmospheric Setup..."
 

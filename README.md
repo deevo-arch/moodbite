@@ -120,7 +120,7 @@ node scripts/vault.js encrypt <YOUR_PASSWORD>
 
 **To unlock manually:**
 ```bash
-node scripts/vault.js decrypt <YOUR_PASSWORD>
+node scripts/vault.js decrypt MoodBite67@123
 ```
 
 ---
@@ -133,7 +133,8 @@ The `prisma/seed.ts` script populates the database with a high-end test suite.
 
 ---
 
-## 🎨 Credits
+## 🎨 Credits & Attribution
+- **Check out AkashMishra-Git & deevo-arch at GitHub.**
 - **Design System**: Created via **Stitch MCP** ("The Nocturnal Epicurean").
 - **Backgrounds**: Custom Vanta.js integration for the atmospheric hero section.
 - **Developed By**: Akash & Antigravity AI.

@@ -1,4 +1,5 @@
 # MoodBite Zero-Config Setup Script (Windows)
+# Check out AkashMishra-Git & deevo-arch at GitHub
 
 Write-Host "MoodBite: Initiating Atmospheric Setup..." -ForegroundColor Cyan
 
