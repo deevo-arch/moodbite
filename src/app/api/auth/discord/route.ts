@@ -2,8 +2,12 @@ import { NextResponse } from 'next/server'
 
 export async function GET(req: Request) {
   const clientId = process.env.DISCORD_CLIENT_ID
-  const host = req.headers.get('host') || 'localhost:3000'
-  const protocol = host.includes('localhost') ? 'http' : 'https'
+  
+  // Detect host and protocol via proxy headers (Cloudflare) or fallback
+  const forwardedHost = req.headers.get('x-forwarded-host')
+  const forwardedProto = req.headers.get('x-forwarded-proto') || 'https'
+  const host = forwardedHost || req.headers.get('host') || 'localhost:3000'
+  const protocol = forwardedHost ? forwardedProto : (host.includes('localhost') ? 'http' : 'https')
   
   if (!clientId) {
     return NextResponse.json({ error: 'Missing DISCORD_CLIENT_ID in .env' }, { status: 500 })
